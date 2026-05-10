@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (!Python.isStarted()) {
+            Python.start(AndroidPlatform(this))
+        }
         setContentView(R.layout.activity_main)
 
         tvResult = findViewById(R.id.tvResult)
